@@ -49,23 +49,3 @@ v
 |
 v
 [Reporting]
-
-           [External API]
-                |
-                v
-    [Data Extraction]
-                |
-                v
-    [Data Transformation]
-                |
-                v
-    [MySQL Database]
-                |
-                v
-    [Daily Aggregation]
-                |
-                v
-    [Upload to S3 Bucket]
-                |
-                v
-           [Reporting]
