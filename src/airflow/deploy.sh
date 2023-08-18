@@ -20,7 +20,8 @@ fi
 
 # Copy files from the source directory to the destination directory
 cp -r "$SOURCE_DIR"/dags/* "$DEST_DIR"/dags/
-
-echo "Dag files copied successfully from '$SOURCE_DIR' to '$DEST_DIR'."
-
+echo "Dags deployed"
+cp ../config/configuration.ini "$DEST_DIR"/dags/scripts/config/
+echo "configuration file deployed"
 cp ../data/crypto_price_etl.py "$DEST_DIR"/dags/scripts/
+echo "scripts deployed"
