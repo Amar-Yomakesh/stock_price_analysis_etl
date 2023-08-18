@@ -1,12 +1,13 @@
 # Crypto Price Data Pipeline
 
 This project is designed to extract hourly cryptocurrency prices from an external API, transform the data into a DataFrame, load it into a local MySQL database, perform daily aggregation, and finally upload the aggregated data to an S3 bucket for reporting purposes. The entire data pipeline is orchestrated using Apache Airflow.
+Arflow is WSL (Ubuntu) platfrom without docker.
 
 ## Prerequisites
 
 - Python 3.x
 - Apache Airflow
-- mysql-connector-python (for MySQL interactions)
+- sqlalchemy (for MySQL interactions)
 - pandas (for data manipulation)
 - boto3 (for S3 interactions)
 
@@ -23,11 +24,13 @@ This project is designed to extract hourly cryptocurrency prices from an externa
    git clone https://github.com/AmarYomakesh/stock_price_analysis.git
 
 2. Deploy into airflow:
-   make sure airflow home is set and then run ./deploy.sh
+   make sure airflow home is set as AIRFLOW_HOME in environment variable. set AIRFLOW_HOME=<your path to airflow>
+   and then run ./deploy.sh
    the script copies the dags into $AIRFLOW_HOME/dags folder
    and python scripts into $AIRFLOW_HOME/dags/scripts folder
+   config file is copied to $AIRFLOW_HOME/dags/config folder
 
-3. Configure API credentials, MySQL connection details, and S3 bucket information in the `config/` directory.
+4. Configure API credentials, MySQL connection details, and S3 bucket information in the `config/` directory.
 
 ## Usage
 
